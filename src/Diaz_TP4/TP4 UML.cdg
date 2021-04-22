@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TP4">
+  <ClassDiagramComponents>
+    <Class name="Guerrero" package="TP4" visibility="public" xPosition="314.0" yPosition="617.0">
+      <Fields>
+        <Field name="caballo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nick"/>
+          <Argument type="Position" name="ubicacion"/>
+          <Argument type="boolean" name="caballo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="avanzar" returnType="void" visibility="public"/>
+        <Method name="disparar" returnType="void" visibility="public"/>
+        <Method name="getCaballo" returnType="boolean" visibility="public"/>
+        <Method name="setCaballo" returnType="void" visibility="public">
+          <Argument type="boolean" name="caballo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Personaje" package="TP4" visibility="public" xPosition="357.0" yPosition="30.0">
+      <Fields>
+        <Field name="ubicacion" type="Position" visibility="private"/>
+        <Field name="nick" type="String" visibility="private"/>
+        <Field name="vidas" type="int" visibility="private"/>
+        <Field name="energia" type="int" visibility="private"/>
+        <Field name="orientacion" type="char" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="nick"/>
+          <Argument type="Position" name="ubicacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUbicacion" returnType="Position" visibility="public"/>
+        <Method name="getNick" returnType="String" visibility="public"/>
+        <Method name="getVidas" returnType="int" visibility="public"/>
+        <Method name="getEnergia" returnType="int" visibility="public"/>
+        <Method name="getOrientacion" returnType="char" visibility="public"/>
+        <Method name="setUbicacion" returnType="void" visibility="public">
+          <Argument type="Position" name="ubicacion"/>
+        </Method>
+        <Method name="setNick" returnType="void" visibility="public">
+          <Argument type="String" name="nick"/>
+        </Method>
+        <Method name="setVidas" returnType="void" visibility="public">
+          <Argument type="int" name="vidas"/>
+        </Method>
+        <Method name="setEnergia" returnType="void" visibility="public">
+          <Argument type="int" name="energia"/>
+        </Method>
+        <Method name="setOrientacion" returnType="void" visibility="public">
+          <Argument type="char" name="orientacion"/>
+        </Method>
+        <Method name="disparar" returnType="void" visibility="public"/>
+        <Method name="posicionActual" returnType="String" visibility="public"/>
+        <Method name="girar" returnType="void" visibility="public"/>
+        <Method name="avanzar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Position" package="TP4" visibility="public" xPosition="784.0" yPosition="144.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getX" returnType="int" visibility="public"/>
+        <Method name="getY" returnType="int" visibility="public"/>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="posicionActual" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestHerencia" package="TP4" visibility="public" xPosition="767.0" yPosition="515.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="TP4.Personaje" target="TP4.Position" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ubicacion" source="TP4.Personaje" target="TP4.Position" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="TP4.Guerrero" target="TP4.Personaje"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
